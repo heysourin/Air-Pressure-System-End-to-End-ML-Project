@@ -1,0 +1,26 @@
+*********************DAY 1****************************
+
+    Steps of day 1:
+        1. git repo
+        2. create folder for building project
+        3. go inside and open vscode
+        4. create virtual env
+        5. activate vir env
+        6. create package
+        7. setup. and run
+        8. requirements file creat and run
+
+    Day 1 Notes:
+        1. How to create package?
+        2. setup.py as root location.
+            i. turn on your env.
+            ii. run with `python3 setup.py install`
+
+*************Other Notes***************
+
+1. "-r" in pip install: 'read', it reads every package mentioned in requirements.txt then install them.
+
+2. egg-file: meta-data of all the dependencies.
+            gets created while creating setup.py.
+
+3. from setuptools import find_packages: finds all the packages in the file setup.
