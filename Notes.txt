@@ -16,6 +16,38 @@
             i. turn on your env.
             ii. run with `python3 setup.py install`
 
+
+*********************DAY 2****************************
+    Steps of day 2:
+        1. Create function to read requirements.txt from setup.py.
+        2. GitHub setup
+        3. steup.py:```
+            def get_requirements() -> List[str]:
+                requirements_list: List[str] = [] #returns list of requirements
+                return requirements_list
+            ```
+            then install using `pip3 install -r requirements.txt`
+
+
+*********************DAY 3****************************
+    Steps of day 3:
+        1. Excpection: 
+            i. To see all errors at one place. we can see what error what file.
+            ii. Create in sensor(your project root) folder.
+        2. Logging:
+            i. Till what point our project is working.
+            ii. Create in sensor folder.
+        3.  
+
+
+
+
+
+
+
+
+
+
 *************Other Notes***************
 
 1. "-r" in pip install: 'read', it reads every package mentioned in requirements.txt then install them.
@@ -24,3 +56,5 @@
             gets created while creating setup.py.
 
 3. from setuptools import find_packages: finds all the packages in the file setup.
+
+4. `-e .` in requirements.txt --> Editable mode --> You can directly run `pip3 install -r requirements.txt`, it triggers 'setup.py' to run the 'find_packages()' function, that checks how many packages are installed or not.

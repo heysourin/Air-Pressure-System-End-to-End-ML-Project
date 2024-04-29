@@ -1,5 +1,11 @@
-from setuptools import find_packages, setup
 from typing import List
+from setuptools import find_packages, setup
+
+
+def get_requirements() -> List[str]:
+    requirements_list: List[str] = [] #returns list of requirements
+    return requirements_list
+
 
 setup(
     name='sensor',
@@ -7,10 +13,8 @@ setup(
     author="sourin",
     author_email="sourin07@gmail.com",
     packages=find_packages(),
-    install_require=["pymongo"],
-    
-)
-
+    install_requires=get_requirements(), 
+    )
 
 '''
 find_packages: Finds packages from your directory. It tries to find it using __init__.py.
