@@ -31,10 +31,10 @@
 
 *********************DAY 3****************************
     Steps of day 3:
-        1. Excpection: 
+        1. Excpection: exception.py
             i. To see all errors at one place. we can see what error what file.
             ii. Create in sensor(your project root) folder.
-        2. Logging:
+        2. Logging: logger.py
             i. Till what point our project is working.
             ii. Create in sensor folder.
         3.  
