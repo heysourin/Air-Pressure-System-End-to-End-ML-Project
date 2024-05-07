@@ -1,4 +1,4 @@
-*********************DAY 1****************************
+*************************************************DAY ****************************1****************************
 
     Steps of day 1:
         1. git repo
@@ -17,7 +17,7 @@
             ii. run with `python3 setup.py install`
 
 
-*********************DAY 2****************************
+*************************************************DAY 2********************************************************
     Steps of day 2:
         1. Create function to read requirements.txt from setup.py.
         2. GitHub setup
@@ -29,7 +29,7 @@
             then install using `pip3 install -r requirements.txt`
 
 
-*********************DAY 3****************************
+*************************************************DAY 3********************************************************
     Steps of day 3:
         1. Excpection: exception.py
             i. To see all errors at one place. we can see what error what file.
@@ -41,28 +41,30 @@
 
 
 
-*********************DAY 4****************************
+*******************************************DAY 4**************************************************
     Steps of day 4:
        machine learning project setup
 
 
-*********************DAY 5****************************
+*******************************************DAY 5**************************************************
     Steps of day 5:
         1. Mongodb experiment: mongodb.ipynb
         2. KNN imputer experiment: eda.ipynb
 
 
 
-*********************DAY 6****************************
+*******************************************DAY 6**************************************************
     Steps of day 6: Data ingestion
     1. setting up .env file.
     2. setting up sensor/__init__.py, for connecting to .env
     3. connect mongodb in sensor/config.py using environment variable
     4. in sensor/utils.py we will upload the data to mongodb using mongo_client from config.py
-
-    5. creating a folder outside sensor folder
+        i. Then call 'dump_csv_file_to_mongodb_collection' function from main.py
+    
+    5. creating a folder 'config' outside sensor folder
         i. will create schema.yaml here
         ii. 
+        
     6. Creating a foler named 'cloud_storage' inside 'sensor'
 
     7. Creating a foler named 'components' inside 'sensor'
@@ -87,14 +89,15 @@
     10. Creating a foler named 'data_access' inside 'sensor'
 
     11. Creating a foler named 'entity' inside 'sensor'
-        i. create a file here 'artifacts.py'
-        i. create a file here 'config.py'
+        i. create a file here 'artifacts_entity.py'
+        i. create a file here 'config_entity.py'
 
     12. Creating a foler named 'pipeline' inside 'sensor'
         a. create a file 'training_pipeline.py'
 
+    13. Writing constant variables in 'sensor/constant/data_pipeline/__init__.py'
 
-*************Other Notes***************
+*****************************************Other Notes*******************************************
 
 1. "-r" in pip install: 'read', it reads every package mentioned in requirements.txt then install them.
 

@@ -1,0 +1,25 @@
+class Car:
+    def __init__(self, windows, doors, enginetype):
+        self.windows = windows
+        self.doors = doors
+        self.enginetype = enginetype
+        
+    def driving(self):
+        print("The car is driving itself")
+
+#! Class Audi is inheriting from class Car
+class Audi(Car):
+    def __init__(self, windows, doors, enginetype, horsepower):
+        super().__init__(windows, doors, enginetype)
+        self.horsepower = horsepower
+    
+    def selfdriving(self):
+        print("It is a self driving car")
+
+#! Creating a new instance
+Q7 = Audi(4, 5, "Diesel", 200)
+print(Q7.horsepower)
+Q7.driving()
+Q7.selfdriving()
+
+print(dir(Q7))
