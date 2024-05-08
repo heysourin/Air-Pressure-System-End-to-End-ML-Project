@@ -64,10 +64,11 @@
     5. creating a folder 'config' outside sensor folder
         i. will create schema.yaml here
         ii. 
-        
-    6. Creating a foler named 'cloud_storage' inside 'sensor'
 
-    7. Creating a foler named 'components' inside 'sensor'
+    6. Creating a foler named 'cloud_storage' inside 'sensor'
+        i. __init__.py
+
+    7. Creating a foler named 'components' inside 'sensor', refer 0_sensor training_pipeline.png
         i. will create file 'sensor/components/data_ingestion.py'
         ii. will create file 'sensor/components/data_validation.py'
         iii. will create file 'sensor/components/data_transformation.py'
@@ -76,26 +77,62 @@
         vi. will create file 'sensor/components/model_pusher.py'
 
     8. Creating a foler named 'configuration' inside 'sensor'
-        i. will create file 'sensor/configuration/mongodb_connection.py'
+        i. create __init__.py
+        ii. will create file 'sensor/configuration/mongodb_connection.py'
 
     9. Creating a foler named 'constant' inside 'sensor'
-        i. will create file 'sensor/constant/env_variable.py'
-        ii. will create file 'sensor/constant/application.py'
-        iii. will create file 'sensor/constant/database.py'
-        iv. will create file 'sensor/constant/s3_bucket.py'
-        iv. will create folder 'sensor/constant/training_piprline'
+        i. create __init__.py
+        ii. will create file 'sensor/constant/env_variable.py'
+        iii. will create file 'sensor/constant/application.py'
+        iv. will create file 'sensor/constant/database.py'
+        v. will create file 'sensor/constant/s3_bucket.py'
+        vi. will create FOLDER 'sensor/constant/training_pipeline'
             a. __init__.py
 
     10. Creating a foler named 'data_access' inside 'sensor'
+        i. create __init__.py
+
 
     11. Creating a foler named 'entity' inside 'sensor'
-        i. create a file here 'artifacts_entity.py'
-        i. create a file here 'config_entity.py'
+        i. create __init__.py
+        ii. create a file here 'artifacts_entity.py'
+        iii. create a file here 'config_entity.py'
 
     12. Creating a foler named 'pipeline' inside 'sensor'
+        i. create __init__.py
         a. create a file 'training_pipeline.py'
 
-    13. Writing constant variables in 'sensor/constant/data_pipeline/__init__.py'
+    13.(IMP) Writing constant variables in 'sensor/constant/training_pipeline/__init__.py'
+        ### CONTAINS ALL THE CONSTANTS###
+
+    14.(IMP) Config files at: Using the above we create a. Training pipeline b. data ingestion config
+        
+        Using the variables in constant file, we'll create all the files and folders in '/sensor/entity/config_entity.py', we wil use classes like 'TrainingPipelineConfig', 'DataIngestionConfig' and so on... 
+            i. will create all the folders using two above classes
+
+
+*******************************************DAY 7: Data Ingestion Part 2 **************************************************
+    1. We will work will file 'sensor/components/data_ingestion.py'
+        ## Setup point 2. (Mongodb) first
+        i. use ingestion config
+        ii. export data to feautre folder
+        iii. ingestion folder, train test split
+        iv. connect all of the above
+
+
+    2. MongoDB:
+        Required files: .env --> env_variable --> conncetion --> sensor_data
+
+            i. .env file: contains mongodb url
+            ii.  'sensor/constant/env_variable.py' 
+            iii. 'sensor/configuration/mongo_db_connection.py': will connect to Mongo
+            iv. 'sensor/data_access/sensor_data.py': for data access
+
+    3. Will run data_ingestion (point 1.) using pipeline
+
+
+
+
 
 *****************************************Other Notes*******************************************
 
