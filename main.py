@@ -1,8 +1,8 @@
 import sys
 from sensor.expection import SensorException
 from sensor.logger import logging
-from sensor.utils import dump_csv_file_to_mongodb_collection
-
+from sensor.utils2 import dump_csv_file_to_mongodb_collection
+from sensor.pipeline.training_pipeline import TrainingPipeline
 # def test_exception() -> None:
 #     try:
 #         logging.info("Ekhane ekta error eseche, zero diye divide hoy na! ")
@@ -12,8 +12,11 @@ from sensor.utils import dump_csv_file_to_mongodb_collection
 
 
 if __name__ == "__main__":
-    filepath = "/home/ryle/Desktop/SensorLive/aps_failure_training_set1.csv"
-    database_name = "live_sensor_project"
-    collection_name = "sensors"
+    # filepath = "/home/ryle/Desktop/SensorLive/aps_failure_training_set1.csv"
+    # database_name = "live_sensor_project"
+    # collection_name = "sensors"
     
-    dump_csv_file_to_mongodb_collection(filepath, database_name, collection_name)
+    # dump_csv_file_to_mongodb_collection(filepath, database_name, collection_name)
+
+    training_pipeline = TrainingPipeline()
+    training_pipeline.run_pipeline()

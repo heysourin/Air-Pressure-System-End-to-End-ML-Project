@@ -146,3 +146,10 @@
 3. from setuptools import find_packages: finds all the packages in the file setup.
 
 4. `-e .` in requirements.txt --> Editable mode --> You can directly run `pip3 install -r requirements.txt`, it triggers 'setup.py' to run the 'find_packages()' function, that checks how many packages are installed or not.
+
+
+
+
+
+__________________
+* sensor/configuration/mongo_db_connection.py: checked

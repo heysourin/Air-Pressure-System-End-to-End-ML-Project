@@ -1,3 +1,2 @@
-DATABASE_NAME = "live_sensor_project"
+DATABASE_NAME: str = "live_sensor_project"
 COLLECTION_NAME = "sensors"
-
