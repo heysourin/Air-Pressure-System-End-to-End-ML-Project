@@ -21,7 +21,7 @@ class TrainingPipeline:
             data_ingestion = DataIngestion(
                 data_ingestion_config=self.data_ingestion_config)
 
-            data_ingestion_artifacts = data_ingestion.initiate_data_ingestion() #TODO
+            data_ingestion_artifacts = data_ingestion.initiate_data_ingestion()
 
             logging.info(
                 f"Data ingestion completed and artifact: {data_ingestion_artifacts}")

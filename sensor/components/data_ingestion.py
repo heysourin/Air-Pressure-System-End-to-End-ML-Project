@@ -24,7 +24,7 @@ class DataIngestion:
         except Exception as e:
             raise SensorException(e, sys)
 
-    def export_data_into_feature_store(self) -> DataFrame:
+    def export_data_into_feature_store(self, database_name, collection_name) -> DataFrame:
         """
         Export mongo db collection record as data frame into feature folder
         """
@@ -33,19 +33,8 @@ class DataIngestion:
 
             sensor_data = SensorData()
 
-            # dataframe = sensor_data.export_collection_as_dataframe(
-            # collection_name=self.data_ingestion_config.collection_name)
-            """
-            mongo_url = os.getenv(MONGODB_URL_KEY)
-
-            client = pymongo.MongoClient(mongo_url)
-            db = client["live_sensor_project"]
-            collection = db["sensors"]
-
-            dataframe = pd.DataFrame(list(collection.find()))
-            """
-            dataframe = sensor_data.export_collection_as_dataframe(
-                DATABASE_NAME, COLLECTION_NAME)
+            self.dataframe = sensor_data.export_collection_as_dataframe(
+                database_name, collection_name)
 
             feature_store_file_path = self.data_ingestion_config.feature_store_file_path
 
@@ -54,10 +43,11 @@ class DataIngestion:
             dir_path = os.path.dirname(feature_store_file_path)
             os.makedirs(dir_path, exist_ok=True)
 
-            dataframe.to_csv(feature_store_file_path, index=False, header=True)
+            self.dataframe.to_csv(feature_store_file_path,
+                                  index=False, header=True)
 
             logging.info("Dataframe return successfull: data_ingestion.py")
-            return dataframe
+            return self.dataframe
         except Exception as e:
             raise SensorException(e, sys)
 
@@ -98,7 +88,8 @@ class DataIngestion:
     def initiate_data_ingestion(self) -> DataIngestionArtifact:
         try:
 
-            dataframe = self.export_data_into_feature_store()  # TODO
+            dataframe = self.export_data_into_feature_store(
+                DATABASE_NAME, COLLECTION_NAME) 
 
             columns_to_drop = [
                 col for col in self._schema_config["drop_columns"] if col in dataframe.columns]
@@ -107,7 +98,6 @@ class DataIngestion:
             # dataframe = dataframe.drop(
             # self._schema_config["drop_columns"], axis=1)
 
-            # TODO: Error as data empty
             self.split_data_as_train_test(dataframe=dataframe)
 
             data_ingestion_artifact = DataIngestionArtifact(
