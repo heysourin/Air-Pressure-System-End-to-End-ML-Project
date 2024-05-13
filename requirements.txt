@@ -3,5 +3,7 @@ python-dotenv
 pymongo
 pandas
 numpy
+PyYAML
+dill
 
 -e .

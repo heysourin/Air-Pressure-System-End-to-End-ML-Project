@@ -20,7 +20,7 @@ columns:
   - aj_000: int
   - ak_000: int
   - al_000: int
-  - am_0: int
+  - am_0:   int
   - an_000: int
   - ao_000: int
   - ap_000: int
@@ -149,7 +149,7 @@ columns:
   - dz_000: int
   - ea_000: int
   - eb_000: int
-  - ec_00: int
+  - ec_00:  int
   - ed_000: int
   - ee_000: int
   - ee_001: int

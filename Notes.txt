@@ -102,7 +102,7 @@
         i. create __init__.py
         a. create a file 'training_pipeline.py'
 
-    ##-----DATA INGESTION STARTS HERE-----##
+    ##################DATA INGESTION STARTS HERE##################
     13.(IMP) Writing constant variables in 'sensor/constant/training_pipeline/__init__.py'
         ### CONTAINS ALL THE CONSTANTS###
 
@@ -127,9 +127,69 @@
 
             i. .env file: contains mongodb url
             ii.  'sensor/constant/env_variable.py' 
-        ** iii. 'sensor/configuration/mongo_db_connection.py': will connect to Mongo
+            iii. 'sensor/configuration/mongo_db_connection.py': will connect to Mongo
             iv. 'sensor/data_access/sensor_data.py': for data access
             v. Perform step 1
+
+    3. steps:
+        a. 'sensor/configuration/mongo_db_connection.py': contains client conncetion
+        b. Contains 2 function:
+            i. to save data from local (csv) to mongodb
+            ii. downlaod data from mongodb and export to artifacts: contain db and dump_csv_file_to_mongodb_collection
+        c. 'sensor/components/data_ingestion.py': 
+                a. running the functions from above file.
+                b. saving the main file as csv
+                c. train test split and saving them csv 
+
+    ##################DATA INGESTION ENDS HERE(ended on day7)##################
+
+
+*******************************************DAY 8: Data Validation **************************************************
+    1. Purpose of data validation:
+        i. Reading the saved files 
+        ii. Checking all the desired columns exits or not --> Using yaml file
+        iii. numerical column validation
+        iv. Data drift detection: Detects data drift between train and test data
+        v. artifacts creation (Reports)
+
+        Data validation means :
+        - Data Quality: Ensuring the quality and integrity of data by checking for missing values, outliers,
+        inconsistencies, and errors.
+        - Data Completeness: Verifying that all required data fields and features are present and complete.
+        - Data Consistency: Checking the consistency and coherence of data across different sources,
+        datasets, or time periods.
+
+    2. constant --> entity
+
+    3. steps:
+        a. "config/schema.yaml"
+        b. "sensor/utils/": files we already created above
+        c. edit main_utils.py
+        d. write constants in "sensor/constant/training_pipeline/__init__.py"
+        e. 
+
+
+    ##################DATA VALIDATIOIN STARTS HERE##################
+
+    ##################DATA VALIDATIOIN ENDS HERE##################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -146,10 +206,3 @@
 3. from setuptools import find_packages: finds all the packages in the file setup.
 
 4. `-e .` in requirements.txt --> Editable mode --> You can directly run `pip3 install -r requirements.txt`, it triggers 'setup.py' to run the 'find_packages()' function, that checks how many packages are installed or not.
-
-
-
-
-
-__________________
-* sensor/configuration/mongo_db_connection.py: checked

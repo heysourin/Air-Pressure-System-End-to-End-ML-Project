@@ -80,7 +80,7 @@ class DataIngestion:
             test_set.to_csv(
                 self.data_ingestion_config.testing_file_path, index=False, header=True)
 
-            logging.info(f"Exporting train and test file path")
+            logging.info(f"Exporting train and test set as CSV files to respective folders")
 
         except Exception as e:
             raise SensorException(e, sys)

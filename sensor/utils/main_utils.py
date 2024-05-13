@@ -15,6 +15,7 @@ def read_yaml_file(file_path: str) -> dict:
             return yaml.safe_load(yaml_file)
 
     except Exception as e:
+        logging.error("Error reading yaml file")
         raise SensorException(e, sys)
 
 

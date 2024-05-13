@@ -2,7 +2,7 @@ import os
 
 TARGET_COLUMN = "class"
 PIPELINE_NAME = "sensor"
-ARTIFACT_DIR = "artifact"
+ARTIFACT_DIR = "artifacts"
 FILE_NAME = "sensor.csv"
 
 
