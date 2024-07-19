@@ -51,7 +51,3 @@ Check the installed packages:
 ```bash
 pip list
 ```
-
-```
-command
-```
